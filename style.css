@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+/* Weather Input */
+.weather-input {
+    width: 25%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    padding: 1rem 2.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.weatherIcon {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.weatherIcon img {
+    width: 150px;
+    height: auto;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.input-group input {
+    background-color: white;
+    padding: 1rem;
+    font-size: 15px;
+    border-radius: 6px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.input-group .convertor {
+    position: absolute;
+    right: 45px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.input-group .fa-search {
+    position: absolute;
+    right: 15px;
+    color: #3b5998;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* Weather Output */
+.weather-output {
+    width: 75%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    background: #D3D3D3;
+    overflow-y: auto;
+}
+
+
+.weather-details {
+    text-align: center;
+    padding-top: 1rem;
+    width: 100%;
+}
+
+.temperature {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.temperature span {
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.feelsLike,
+.description,
+.city,
+.date {
+    margin: 1rem 0;
+}
+
+/* Highlights Section */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.highlights div {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #cfe2f3;
+    border-radius: 20px;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.highlights div:hover {
+    transform: scale(1.05);
+}
+
+.highlights i {
+    font-size: 30px;
+    margin-right: 0.5rem;
+}
+
+/* Forecast Section */
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.forecast div {
+    background-color: #80deea;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.forecast div:hover {
+    transform: scale(1.05);
+}
+
+.forecast img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+
+.sun span {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: grey;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px; 
+}
+
+.left-panel .temperature,
+.left-panel .feelsLike,
+.left-panel .description,
+.left-panel .city,
+.left-panel .additional-info {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+
+.weatherIcon {
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    align-content: center;
+    padding: 10px 0px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 100px; 
+    color: white;
+}
+
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; 
+}
+
+.forecast-card {
+    width: 180px; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    text-align: center;
+    flex-shrink: 0; 
+}
+
+.forecast-card img {
+    width: 50px; 
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .weather-input {
+        width: 30%; 
+    }
+
+    .weather-output {
+        width: 70%;
+    }
+
+    .highlights,
+    .forecast {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .forecast-card {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-input {
+        width: 100%; 
+        position: relative; 
+        height: auto; 
+        padding: 1rem; 
+    }
+
+    .weather-output {
+        width: 100%;
+        position: relative;
+        padding: 1rem; 
+    }
+
+    .highlights,
+    .forecast {
+        grid-template-columns: 1fr; 
+    }
+
+    .forecast-card {
+        width: auto;
+    }
+}
